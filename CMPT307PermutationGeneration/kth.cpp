@@ -20,6 +20,22 @@ using namespace std;
  with the correct solution ..........
  ***************************************/
 void kth(int m, int n, unsigned long long k) {
+    //base case
+    if (m==0) {
+        //no more 0s, so we will just print out n 1s
+        for (int i=1 ; i<=n; i++) {
+            cout << '1';
+        }
+        return;
+    }
+    if (n==0) {
+        //no more 1s, so we will just print out m 0s
+        for (int i=1 ; i<=m; i++) {
+            cout << '0';
+        }
+        return;
+    }
+    
     //calculate the pivot
     unsigned long long pivot = nCr(m+n-1, n);
     //ok now we have the pivot we know at the largest bit of the binary string turns from 0 to 1
